@@ -9,9 +9,14 @@ const determine_shift=(times,duration)=>{
     return time_id;
 
 }
-
+let timelog;
 const apply_html = (times,duration,document,shift,roles)=>{
     const time_id=determine_shift(times,duration);
+    if(timelog!=time_id){
+        document.getElementById("audio").play();
+        console.log();
+    }
+    timelog=time_id;
     document.getElementById("current").innerText= `現在時刻 : ${(new Date).getHours()}:${(new Date).getMinutes()}`;
     document.getElementById("time").innerText=`時間割り振り : ${times[time_id][0]}:${times[time_id][1]} - ${times[time_id][0]+duration[0]}:${times[time_id][1]+duration[1]}`;
     let text="";
