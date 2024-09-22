@@ -16,7 +16,7 @@ const apply_html = (times,duration,document,shift,roles)=>{
     document.getElementById("time").innerText=`時間割り振り : ${times[time_id][0]}:${times[time_id][1]} - ${times[time_id][0]+duration[0]}:${times[time_id][1]+duration[1]}`;
     let text="";
     for(let i=0;i<shift[time_id].length;i++){
-        text += `${roles[i]} : ${shift[time_id][i]}\n`;
+        text += `${roles[i]} : ${shift[time_id+1][i]}\n`;
     }
     document.getElementById("managers").innerText=text;
 }
